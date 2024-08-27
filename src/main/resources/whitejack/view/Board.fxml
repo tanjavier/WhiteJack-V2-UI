@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-color: black;" stylesheets="@../Stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="whitejack.Controller.BoardController">
+   <children>
+      <ListView fx:id="playerRightMat" layoutX="967.0" layoutY="236.0" prefHeight="200.0" prefWidth="400.0" rotate="270.0" style="-fx-background-color: black; -fx-border-color: white;" />
+      <ListView fx:id="playerLeftMat" layoutX="-72.0" layoutY="232.0" prefHeight="200.0" prefWidth="400.0" rotate="90.0" style="-fx-background-color: black; -fx-border-color: white;" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="180.0" layoutX="327.0" layoutY="521.0" stroke="WHITE" strokeType="INSIDE" width="650.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="438.0" layoutY="192.0" stroke="WHITE" strokeType="INSIDE" width="400.0" />
+      <Text fx:id="statusText" fill="WHITE" layoutX="282.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOADING..." textAlignment="CENTER" wrappingWidth="711.0000268220901" AnchorPane.bottomAnchor="684.453125" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="306.99997317790985" AnchorPane.topAnchor="54.560546875">
+         <font>
+            <Font name="Impact" size="50.0" />
+         </font>
+      </Text>
+      <Button id="buttonLeave" fx:id="nextRoundBtn" layoutX="1088.0" layoutY="30.0" mnemonicParsing="false" onAction="#hostStartNextRound" prefHeight="50.0" prefWidth="180.0" text="Next Round" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" />
+      <Button id="playerButtonHit" fx:id="hitBtn" layoutX="488.0" layoutY="718.0" mnemonicParsing="false" onAction="#playerHit" prefHeight="50.0" prefWidth="150.0" text="Hit" />
+      <Button id="playerButtonStand" fx:id="standBtn" layoutX="666.0" layoutY="718.0" mnemonicParsing="false" onAction="#playerStand" prefHeight="50.0" prefWidth="150.0" text="Stand" />
+      <Button id="playerButtonIncrease" fx:id="increaseBetBtn" layoutX="43.0" layoutY="651.0" mnemonicParsing="false" onAction="#increaseBet" prefHeight="60.0" prefWidth="85.0" text="+" />
+      <Button id="playerButtonDecrease" fx:id="decreaseBetBtn" layoutX="138.0" layoutY="652.0" mnemonicParsing="false" onAction="#decreaseBet" prefHeight="60.0" prefWidth="85.0" text="-" />
+      <Button id="playerButtonDecrease" fx:id="confirmBetBtn" layoutX="43.0" layoutY="718.0" mnemonicParsing="false" onAction="#confirmBet" prefHeight="50.0" prefWidth="180.0" text="Confirm" />
+      <Button id="buttonLeave" layoutX="37.0" layoutY="47.0" mnemonicParsing="false" onAction="#leaveGame" text="Leave" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0" />
+      <Text id="playerCurrentBalance" fill="WHITE" layoutX="43.0" layoutY="628.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="Balance">
+         <font>
+            <Font name="Impact" size="30.0" />
+         </font>
+      </Text>
+      <Text id="playerCurrentBalanceValue" fx:id="playerMiddleBal" fill="WHITE" layoutX="156.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="1000" wrappingWidth="113.34375">
+         <font>
+            <Font name="Impact" size="30.0" />
+         </font>
+      </Text>
+      <Text id="playerCurrentBetAmount" fill="WHITE" layoutX="43.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="Bet" wrappingWidth="100.88378768414259">
+         <font>
+            <Font name="Impact" size="30.0" />
+         </font>
+      </Text>
+      <Text id="playerBetValue" fx:id="playerMiddleBet" fill="WHITE" layoutX="156.0" layoutY="595.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="20" wrappingWidth="84.34375">
+         <font>
+            <Font name="Impact" size="30.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="playerMiddleCard1" fitHeight="150.0" fitWidth="150.0" layoutX="364.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerMiddleCard2" fitHeight="150.0" fitWidth="150.0" layoutX="482.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerMiddleCard3" fitHeight="150.0" fitWidth="150.0" layoutX="598.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerMiddleCard4" fitHeight="150.0" fitWidth="150.0" layoutX="713.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerMiddleCard5" fitHeight="150.0" fitWidth="150.0" layoutX="829.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <Group layoutX="476.0" layoutY="216.0">
+         <children>
+            <ImageView fx:id="playerTopCard1" fitHeight="150.0" fitWidth="150.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/cards/back_of_card.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerTopCard2" fitHeight="150.0" fitWidth="150.0" layoutX="54.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/cards/back_of_card.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerTopCard3" fitHeight="150.0" fitWidth="150.0" layoutX="108.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/cards/back_of_card.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerTopCard4" fitHeight="150.0" fitWidth="150.0" layoutX="162.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/cards/back_of_card.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerTopCard5" fitHeight="150.0" fitWidth="150.0" layoutX="216.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/cards/back_of_card.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <ImageView fx:id="playerLeftCard1" fitHeight="150.0" fitWidth="150.0" layoutX="64.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerLeftCard2" fitHeight="150.0" fitWidth="150.0" layoutX="64.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerLeftCard3" fitHeight="150.0" fitWidth="150.0" layoutX="64.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerLeftCard4" fitHeight="150.0" fitWidth="150.0" layoutX="64.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerLeftCard5" fitHeight="150.0" fitWidth="150.0" layoutX="65.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerRightCard1" fitHeight="150.0" fitWidth="150.0" layoutX="1127.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerRightCard2" fitHeight="150.0" fitWidth="150.0" layoutX="1127.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerRightCard3" fitHeight="150.0" fitWidth="150.0" layoutX="1127.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerRightCard4" fitHeight="150.0" fitWidth="150.0" layoutX="1127.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerRightCard5" fitHeight="150.0" fitWidth="150.0" layoutX="1126.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+         <image>
+            <Image url="@../img/cards/back_of_card.png" />
+         </image>
+      </ImageView>
+      <Text id="opponent1CurrentBalance" fx:id="playerLeftName" fill="WHITE" layoutX="122.0" layoutY="341.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="Empty slot" textAlignment="CENTER" wrappingWidth="270.4560546875">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="opponent1CurrentBalance" fx:id="playerRightName" fill="WHITE" layoutX="899.0" layoutY="340.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="Empty slot" textAlignment="CENTER" wrappingWidth="270.4560546875">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="opponent1CurrentBalance" fx:id="playerLeftBalLabel" fill="WHITE" layoutX="985.0" layoutY="680.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="Left Player Balance:" textAlignment="RIGHT" wrappingWidth="216.85792803764343">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="opponent1CurrentBalanceValue" fx:id="playerLeftBal" fill="WHITE" layoutX="1212.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="1000" wrappingWidth="84.34375">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="playerCurrentBetAmount" fx:id="playerLeftBetLabel" fill="WHITE" layoutX="1001.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="Left Player Bet:" textAlignment="RIGHT" wrappingWidth="199.99998807907104">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="playerBetValue" fx:id="playerLeftBet" fill="WHITE" layoutX="1212.0" layoutY="650.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="20" wrappingWidth="84.34375">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="opponent2CurrentBalance" fx:id="playerRightBalLabel" fill="WHITE" layoutX="979.0" layoutY="769.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="Right Player Balance:" textAlignment="RIGHT" wrappingWidth="223.85791015625">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="playerCurrentBetAmount" fx:id="playerRightBetLabel" fill="WHITE" layoutX="985.0" layoutY="736.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="Right Player Bet:" textAlignment="RIGHT" wrappingWidth="216.85792803764343">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="playerBetValue" fx:id="playerRightBet" fill="WHITE" layoutX="1212.0" layoutY="737.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="20" wrappingWidth="84.34375">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="opponent2CurrentBalanceValue" fx:id="playerRightBal" fill="WHITE" layoutX="1212.0" layoutY="769.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="1000" wrappingWidth="84.34375">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+      <Text id="opponent1CurrentBalance" fx:id="playerMiddleName" fill="WHITE" layoutX="515.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="boardtext" text="Player name" textAlignment="CENTER" wrappingWidth="270.4560546875">
+         <font>
+            <Font name="Impact" size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
